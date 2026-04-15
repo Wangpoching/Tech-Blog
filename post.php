@@ -134,7 +134,7 @@
     </footer>
   </body>
   <script src="js/footer.js"></script>
-  <script src="plugin/dist/comment-board.js"></script>
+  <script src="<? $_ENV['COMMENT_BOARD']?>plugin/dist/comment-board.js"></script>
   <script>
     const POST_ID = <?= json_encode($id) ?>;
     <?php if ($userToken !== ''): ?>
@@ -142,7 +142,7 @@
     <?php endif; ?>
 
     const GET_APP_TOKEN_URL = "<?= $DOMAIN ?>/get_app_token.php"
-    const loginState = { state: `<?= $DOMAIN ?>/post.php?id=${POST_ID` }
+    const loginState = { state: `<?= $DOMAIN ?>/post.php?id=${POST_ID}` }
 
     // --- Utilities ---
     function isJWTExpired(token) {
