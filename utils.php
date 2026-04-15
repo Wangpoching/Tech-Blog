@@ -1,13 +1,11 @@
 <?php
     // 讀取環境變數
     require_once __DIR__ . '/vendor/autoload.php';
-    $envFile = file_exists(__DIR__ . '/.env.production')
-    ? '.env.production'
-    : '.env';
-    $isProd = ($_ENV['APP_ENV'] ?? 'local') === 'production';
+    $envFile = '.env';
 
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__, $envFile);
     $dotenv->load();
+    $isProd = ($_ENV['APP_ENV'] ?? 'local') === 'production';
 
     define('DRAFT_POST_STATUS', 'draft');
     define('PUBLISHED_POST_STATUS', 'published');
