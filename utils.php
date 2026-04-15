@@ -16,7 +16,7 @@
     // 網頁路徑（給瀏覽器存取用）
     define('UPLOAD_COVERS_URL', BASE_URL . 'uploads/covers/');
     define('UPLOAD_CONTENT_URL', BASE_URL . 'uploads/content/');
-    define('DOMAIN', $_ENV['BOARD_URL']);
+    define('DOMAIN', $_ENV['DOMAIN']);
 
     function executeQuery($conn, $sql, $types, ...$params) {
         $stmt = $conn->prepare($sql);
