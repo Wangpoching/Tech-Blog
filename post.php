@@ -134,7 +134,7 @@
     </footer>
   </body>
   <script src="js/footer.js"></script>
-  <script src="<? $_ENV['COMMENT_BOARD']?>plugin/dist/comment-board.js"></script>
+  <script src="<?= $_ENV['COMMENT_BOARD'] ?>plugin/dist/comment-board.js"></script>
   <script>
     const POST_ID = <?= json_encode($id) ?>;
     <?php if ($userToken !== ''): ?>
