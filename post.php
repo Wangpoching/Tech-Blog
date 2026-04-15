@@ -141,8 +141,8 @@
       localStorage.setItem('userToken', <?= json_encode($userToken) ?>)
     <?php endif; ?>
 
-    const GET_APP_TOKEN_URL = "<?= $DOMAIN ?>/get_app_token.php"
-    const loginState = { state: `<?= $DOMAIN ?>/post.php?id=${POST_ID}` }
+    const GET_APP_TOKEN_URL = "<?= DOMAIN ?>/get_app_token.php"
+    const loginState = { state: `<?= DOMAIN ?>/post.php?id=${POST_ID}` }
 
     // --- Utilities ---
     function isJWTExpired(token) {
