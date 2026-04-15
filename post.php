@@ -2,7 +2,6 @@
 	require_once('conn.php');
 	require_once('utils.php');
 	require_once('configs/config.php');
-	session_start();
 
 	// 如果有 userToken，注入到 js 以後要從 session 清除
 	$userToken = getValue($_SESSION, 'userToken');
@@ -66,13 +65,6 @@
 	if ($nextExit) $nextId = $ids[$current + 1];
 	$prevExit = isset($ids[$current - 1]);
 	if ($prevExit) $prevId = $ids[$current - 1];
-
-	// 讀者登入留言板
-	$queryData = array(
-		'state' => DOMAIN . $_SERVER['REQUEST_URI'],
-		'appKey' => BOARD_APP_KEY,
-	);
-	$loginBoardUrl = BOARD_LOGIN_URL . '?' . http_build_query($queryData);
 
 	// 處理讀者登入留言板失敗
   $flash = null;

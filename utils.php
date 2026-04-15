@@ -1,8 +1,15 @@
 <?php
+    // 讀取環境變數
+    $envFile = file_exists(__DIR__ . '/.env.production')
+    ? '.env.production'
+    : '.env';
+    $isProd = ($_ENV['APP_ENV'] ?? 'local') === 'production';
+
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__, $envFile);
+    $dotenv->load();
+
     define('DRAFT_POST_STATUS', 'draft');
     define('PUBLISHED_POST_STATUS', 'published');
-    $isProd = ($_SERVER['HTTP_HOST'] ?? '') === 'tech-blog.bocyun.tw';
-
     define('BASE_URL', $isProd ? '/' : '/phpBased_blog/');
     // 實體路徑（給 PHP 存檔用）
     define('UPLOAD_COVERS_PATH', $_SERVER['DOCUMENT_ROOT'] . ($isProd ? '' : '/phpBased_blog') . '/uploads/covers/');
@@ -10,7 +17,7 @@
     // 網頁路徑（給瀏覽器存取用）
     define('UPLOAD_COVERS_URL', BASE_URL . 'uploads/covers/');
     define('UPLOAD_CONTENT_URL', BASE_URL . 'uploads/content/');
-    define('DOMAIN', $isProd ? 'https://tech-blog.bocyun.tw' : 'http://localhost');
+    define('DOMAIN', $_ENV['BOARD_URL']);
 
     function executeQuery($conn, $sql, $types, ...$params) {
         $stmt = $conn->prepare($sql);
