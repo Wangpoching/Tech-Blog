@@ -134,15 +134,15 @@
     </footer>
   </body>
   <script src="js/footer.js"></script>
-  <script src="http://localhost/board/plugin/dist/comment-board.js"></script>
+  <script src="plugin/dist/comment-board.js"></script>
   <script>
     const POST_ID = <?= json_encode($id) ?>;
     <?php if ($userToken !== ''): ?>
       localStorage.setItem('userToken', <?= json_encode($userToken) ?>)
     <?php endif; ?>
 
-    const GET_APP_TOKEN_URL = 'http://localhost/phpbased_blog/get_app_token.php'
-    const loginState = { state: `http://localhost/phpbased_blog/post.php?id=${POST_ID}` }
+    const GET_APP_TOKEN_URL = "<?= $DOMAIN ?>/get_app_token.php"
+    const loginState = { state: `<?= $DOMAIN ?>/post.php?id=${POST_ID` }
 
     // --- Utilities ---
     function isJWTExpired(token) {
