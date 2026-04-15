@@ -1,5 +1,6 @@
 <?php
     // 讀取環境變數
+    require_once __DIR__ . '/vendor/autoload.php';
     $envFile = file_exists(__DIR__ . '/.env.production')
     ? '.env.production'
     : '.env';
