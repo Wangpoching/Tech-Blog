@@ -1,6 +1,7 @@
 <?php
 	require('../conn.php');
 	require('../utils.php');
+	session_start();
 	isAdmin();
 
 	// ---- 清空資料 ----
