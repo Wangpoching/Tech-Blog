@@ -1,7 +1,7 @@
 <?php
     define('DRAFT_POST_STATUS', 'draft');
     define('PUBLISHED_POST_STATUS', 'published');
-    $isProd = ($_SERVER['HTTP_HOST'] ?? '') === 'techBlog.bocyun.tw';
+    $isProd = ($_SERVER['HTTP_HOST'] ?? '') === 'tech-blog.bocyun.tw';
 
     define('BASE_URL', $isProd ? '/' : '/phpBased_blog/');
     // 實體路徑（給 PHP 存檔用）
@@ -10,7 +10,7 @@
     // 網頁路徑（給瀏覽器存取用）
     define('UPLOAD_COVERS_URL', BASE_URL . 'uploads/covers/');
     define('UPLOAD_CONTENT_URL', BASE_URL . 'uploads/content/');
-    define('DOMAIN', $isProd ? 'https://techBlog.bocyun.tw' : 'http://localhost');
+    define('DOMAIN', $isProd ? 'https://tech-blog.bocyun.tw' : 'http://localhost');
 
     function executeQuery($conn, $sql, $types, ...$params) {
         $stmt = $conn->prepare($sql);
