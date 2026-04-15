@@ -1,0 +1,85 @@
+@use '../../variables' as *
+@use '../../_mixins' as *
+@use '../../components' as *
+@use '../../layouts' as *
+
+body
+	@extend %public-body
+	min-height: 100vh
+
+/** 所有文章頁面 **/
+.intro
+	h1
+		color: $text-body
+		font-size: $text-2xl
+
+	h2
+		color: $text-hint
+		font-size: $text-xl
+
+	p
+		white-space: pre-line
+		line-height: 1.5
+		margin-top: 20px
+		font-size: $text-prose
+		color: $text-muted
+
+.categories
+	margin-top: 40px
+	padding: 40px 30px
+	border-radius: 10px
+	border: 3px solid $border
+	width: 100%
+
+	.category
+		overflow: hidden
+		margin-top: 24px
+
+		.carousel-controls
+			@include flex-gap(10px)
+
+			.control
+				cursor: pointer
+				font-size: $text-prose
+
+		.category__intro
+			display: flex
+			justify-content: space-between
+			font-size: $text-md
+			color: $text-hint
+			font-weight: 500
+
+		h1
+			font-weight: 500
+
+		.carousel
+			margin-top: 12px
+			flex-wrap: nowrap
+			@include flex-gap(20px)
+			transition: transform 0.2s linear
+
+			.post
+				width: 164px
+
+				&__image
+					width: 164px
+					height: 164px
+					overflow: hidden
+					border-radius: 10px
+
+					img
+						width: 100%
+						height: 100%
+
+				&__title
+					margin-top: 8px
+					overflow: hidden
+					white-space: nowrap
+					text-overflow: ellipsis
+					color: $text-muted
+					font-size: $text-base
+					font-weight: bold
+
+@media (max-width: 768px)
+	.intro
+		margin-top: 40px

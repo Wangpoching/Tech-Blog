@@ -1,0 +1,164 @@
+@use './_variables.sass' as *
+@use './_mixins.sass' as *
+
+.footer
+	margin-top: 64px
+	width: 100%
+	padding: 20px 40px
+	display: flex
+	justify-content: center
+	align-items: center
+	font-size: $text-sm
+	color: $text-hint
+	white-space: pre-wrap
+
+	.accent
+		color: $accent
+		font-weight: 500
+
+	&__links
+		display: flex
+
+	a
+		font-size: $text-sm
+		color: $text-muted
+		text-decoration: none
+
+	a + a
+		margin-left: 2px
+
+	a:hover
+		color: $accent
+
+side
+	a
+		display: block
+		cursor: pointer
+		font-size: $text-base
+		padding: 20px 20px
+		border-bottom: 0.5px solid $border
+
+	li
+		&.active, &:hover
+			background-color: $bg-input
+			border-right: 2px solid $text-primary
+
+header
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 14px 32px
+	border-bottom: 0.5px solid $border
+	background: $bg-input
+
+.site-name span
+	color: $text-muted
+	background: $border
+	border-radius: 20px
+	padding: 3px 8px
+	font-size: $text-sm
+	margin-left: 5px
+
+/* 分頁 */
+.pagination
+	justify-content: center
+	padding: 24px 0
+	@include flex-gap(4px)
+
+	/* 頁碼數字 */
+	.page
+		color: $text-muted
+
+		&:hover
+			background: $bg-sidebar
+			color: $text-primary
+
+		/* 當前頁 */
+		&.active
+			background: $text-primary
+			color: white
+			font-weight: 500
+			pointer-events: none
+
+	/* 箭頭 */
+	.arrow
+		color: $text-muted
+		font-size: 18px
+
+		&:hover
+			background: $bg-sidebar
+			color: $text-primary
+
+		/* 箭頭 disabled 狀態 */
+		&.disabled
+			pointer-events: none
+			color: $text-hint
+
+	/* 省略號以及頁碼 */
+	a, .dots
+		width: 32px
+		height: 32px
+		border-radius: 6px
+		font-size: $text-base
+		text-decoration: none
+		transition: background 0.15s, color 0.15s
+		@include flex-center
+
+	.dots
+		color: $text-hint
+		letter-spacing: 2px
+		cursor: default
+		font-size: 12px
+
+.navtool
+	cursor: pointer
+	padding: 6px 4px
+	display: flex
+	flex-direction: column
+	gap: 12px
+	border-radius: 20px
+	position: fixed
+	top: 20%
+	left: 50px
+	background: $bg-sidebar
+
+	&:hover
+		background: $bg-hover
+
+	> a
+		display: flex
+		gap: 50px
+		border-radius: 12px
+		background: inherit
+		padding: 10px
+		width: 42px
+		height: 42px
+
+		&.active
+			background: white
+
+		span
+			display: none
+
+		&:hover span
+			display: inline
+			color: $text-muted
+			font-weight: 500
+
+		img
+			width: 100%
+			height: 100%
+
+@media (max-width: 768px)
+	.content-wrapper
+		margin-top: 100px
+
+	.navtool
+		background: $bg-hover
+		flex-direction: row
+		position: static
+		margin-right: auto
+
+		> a
+			flex-direction: column
+			@include flex-gap(20px)

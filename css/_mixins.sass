@@ -1,0 +1,28 @@
+@mixin flex-gap($gap)
+	display: flex
+	align-items: center
+	gap: $gap
+
+@mixin flex-center
+	display: flex
+	justify-content: center
+	align-items: center
+
+@mixin hover-side($side: left, $distance: 5px, $duration: 0.2s)
+	transition: margin-#{$side} $duration linear
+
+	&:hover
+		margin-#{$side}: $distance
+
+@mixin grid-basic($header-height, $side-width)
+	display: grid
+	grid-template-columns: 1fr $side-width
+	grid-template-rows: $header-height 1fr
+	grid-template-areas: "header header" "main   sidebar"
+
+	header
+		grid-area: header
+	main
+		grid-area: main
+	side
+		grid-area: sidebar

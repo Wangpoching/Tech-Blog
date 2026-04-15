@@ -1,0 +1,192 @@
+@use '../../variables' as *
+@use '../../_mixins' as *
+@use '../../components' as *
+@use '../../layouts' as *
+
+body
+	@extend %public-body
+	min-height: 100vh
+
+.typewriter
+	margin-right: auto
+
+	h1
+		font-family: 'Special Elite', cursive
+		font-size: 42px
+		overflow: hidden
+		white-space: nowrap
+		width: 0
+		border-right: 2px solid #2a2218
+
+		&.go
+			animation: typing-h 0.8s steps(5) forwards, blink 0.7s step-end infinite
+
+	p
+		font-family: 'Special Elite', cursive
+		margin-top: 20px
+		font-size: $text-prose
+		color: #7a6e5f
+		overflow: hidden
+		white-space: nowrap /* 強制不換行 */
+		width: 0
+		opacity: 0
+		border-right: 2px solid #7a6e5f /* 假裝是游標 */
+
+		&.go
+			opacity: 1
+			animation: typing-s 1.4s steps(30) forwards, blink-s 0.7s step-end 8
+
+.profile-image
+	margin-top: 40px
+	border-radius: 20px
+	overflow: hidden
+
+	&__illus
+		margin-top: 6px
+		margin-right: auto
+		font-size: $text-md
+		color: $text-hint
+
+	img
+		width: 100%
+		object-fit: cover
+
+.intro
+	white-space: pre-line
+	line-height: 1.5
+	margin-top: 20px
+	font-size: $text-prose
+	color: $text-muted
+
+.work
+	margin-top: 64px
+
+	h1
+		color: $text-body
+		font-size: $text-xl
+
+	p
+		white-space: pre-line
+		line-height: 1.5
+		margin-top: 20px
+		font-size: $text-prose
+		color: $text-muted
+
+	.work-image
+		margin-top: 40px
+		border-radius: 20px
+		overflow: hidden
+
+		&__illus
+			margin-top: 6px
+			margin-right: auto
+			font-size: $text-md
+			color: $text-hint
+
+		img
+			width: 100%
+			object-fit: cover
+
+.jobs
+	margin-top: 40px
+
+	.job
+		@include flex-gap(5px)
+
+		& + &
+			margin-top: 16px
+
+		.company
+			color: $text-body
+			font-size: $text-prose
+
+		&__title
+			color: $text-muted
+			font-size: $text-prose
+
+		&__duration
+			margin-left: auto
+			color: $text-muted
+			font-size: $text-prose
+
+.elsewhere
+	margin-top: 64px
+
+	h1
+		color: $text-body
+		font-size: $text-xl
+
+	p
+		white-space: pre-line
+		line-height: 1.5
+		margin-top: 20px
+		font-size: $text-prose
+		color: $text-muted
+
+.social-medias
+	margin-top: 20px
+
+	.social-media
+		display: flex
+		align-items: center
+		font-size: $text-prose
+		color: $text-muted
+
+		&::before
+			margin-right: 12px
+			content: ''
+			width: 10px
+			height: 3px
+			display: inline-block
+			background: $text-muted
+
+		& + &
+			margin-top: 12px
+
+		a
+			color: $text-body
+			text-decoration: underline
+			margin-left: 3px
+
+.website
+	margin-top: 64px
+
+	h1
+		color: $text-body
+		font-size: $text-xl
+
+	p
+		white-space: pre-line
+		line-height: 1.5
+		margin-top: 20px
+		font-size: $text-prose
+		color: $text-muted
+
+/** ch 是當前字型的 0 的寬度 **/
+@keyframes typing-h
+	to
+		width: 5ch
+		border-right-color: transparent
+
+@keyframes typing-s
+	to
+		width: 274px
+		border-right-color: transparent
+
+@keyframes blink
+	50%
+		border-right-color: transparent
+
+@keyframes blink-s
+	50%
+		border-right-color: transparent
+
+@media (max-width: 768px)
+	#tw-heading
+		margin-top: 40px
+
+	.job
+		flex-direction: column
+
+		&__duration
+			transform: translateY(-30px)

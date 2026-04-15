@@ -1,0 +1,98 @@
+@use '../../variables' as *
+@use '../../_mixins' as *
+@use '../../components' as *
+@use '../../layouts' as *
+
+body
+	@extend %admin-body
+	@include grid-basic(60px, 180px)
+	min-height: 100vh
+
+main
+	position: relative
+	padding: 28px 32px
+	background-color: $bg
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+side
+	grid-area: sidebar
+	background-color: $bg-sidebar
+	padding: 20px 0
+
+.categories
+	margin-top: 20px
+	border: 0.5px solid $border
+	border-radius: 8px
+	overflow: hidden
+	background: white
+
+	.category
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 13px 16px
+		border-bottom: 0.5px solid $border
+
+		&:hover
+			background: $bg
+
+		&__content
+			@include flex-gap(10px) 
+
+		&__name
+			font-size: $text-base
+
+		&.edit
+			gap: 10px
+
+			&:hover
+				background: $accent-light
+
+			.category__name
+				flex: 1
+				background: inherit
+				border-bottom: 1px solid $danger
+				padding-bottom: 8px
+
+	.category__dot
+		width: 7px
+		height: 7px
+		border-radius: 50%
+		flex-shrink: 0
+		background-color: $accent-border
+
+	.category__count
+		font-size: $text-xs
+		color: $text-hint
+
+	.tools
+		gap: 5px
+		font-size: $text-sm
+		display: flex
+
+	&:not(.edit) .tools
+		display: none
+
+	&:hover .tools
+		display: flex
+
+	.btn-edit
+		cursor: pointer
+		color: $accent-blue
+
+	.btn-delete
+		cursor: pointer
+		color: $danger
+		background: inherit
+
+	.btn-save
+		cursor: pointer
+		color: $accent
+		background: inherit
+
+	.btn-cancel
+		cursor: pointer
+		color: $text-hint
+		background: inherit

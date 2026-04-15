@@ -1,0 +1,64 @@
+@use './_variables.sass' as *
+@use './_mixins.sass' as *
+@use './_base.sass'
+
+span.strong
+	background: $accent-border
+	padding: 0 2px
+
+.error-box
+	background: $danger-bg
+	border: 0.5px solid $danger
+	border-radius: 6px
+	padding: 10px 14px
+	font-size: $text-sm
+	color: $danger
+	margin-top: 20px
+	margin-bottom: 20px
+	+flex-gap(8px)
+
+.back-to-landing
+	font-size: $text-md
+	color: $text-muted
+	cursor: pointer
+	+hover-side(right, 5px, 0.2s)
+
+	&:hover
+		color: $text-primary
+
+.btn-logout
+	color: $text-muted
+	cursor: pointer
+	font-size: $text-sm
+
+	&:hover
+		cursor: pointer
+		color: $danger
+
+.content-wrapper
+	padding: 0 20px
+	margin: 150px auto 0 auto
+	max-width: 600px
+	display: flex
+	flex-direction: column
+
+%admin-body
+	font-family: 'Inter', 'Noto Sans TC', sans-serif
+	background-color: $bg
+
+%public-body
+	font-family: 'Libre Baskerville', serif
+	background-color: $bg-sidebar
+
+
+%selector
+	display: inline-block
+	font-size: $text-sm
+	padding: 6px 10px
+	border: 0.5px solid $border
+	border-radius: 5px
+	color: $text-body
+	background: white
+	outline: none
+
+
