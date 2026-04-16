@@ -17,6 +17,9 @@
     define('UPLOAD_COVERS_URL', BASE_URL . 'uploads/covers/');
     define('UPLOAD_CONTENT_URL', BASE_URL . 'uploads/content/');
     define('DOMAIN', $_ENV['DOMAIN']);
+    // 留言板插件
+    define('BOARD_TOKEN_URL', "{$_ENV['COMMENT_BOARD']}/api/auth/handle_token.php");
+    define('BOARD_APP_TOKEN_URL', "{$_ENV['COMMENT_BOARD']}/api/auth/app_token.php");
 
     function executeQuery($conn, $sql, $types, ...$params) {
         $stmt = $conn->prepare($sql);
