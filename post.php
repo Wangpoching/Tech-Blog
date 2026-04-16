@@ -2,6 +2,7 @@
 	require_once('conn.php');
 	require_once('utils.php');
 	require_once('configs/config.php');
+	session_start();
 
 	// 如果有 userToken，注入到 js 以後要從 session 清除
 	$userToken = getValue($_SESSION, 'userToken');
