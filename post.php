@@ -179,7 +179,7 @@
       loginParams: loginState,
       appKey: '<?= BOARD_APP_KEY ?>',
       userToken: userToken,
-      articlesCount,
+      articlesCount: '<?= $articlesCount ?>',
     })
   </script>
 </html>
