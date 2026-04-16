@@ -54,7 +54,7 @@
 
 	// 計算有幾篇同分類的文章
 	$sql = "SELECT count(id) as articlesCount FROM `posts` WHERE category_id = ? AND status = ?";
-	$result = executeQuery($conn, $sql, 'is', (int)$post['category_id'], PUBLISHED_POST_STATUS);
+	$result = executeQuery($conn, $sql, 'is', (int)$post['categoryId'], PUBLISHED_POST_STATUS);
 	if (!$result || $result->num_rows === 0) {
 		header('Location: index.php');
 		exit();
