@@ -82,7 +82,7 @@
     ];
     $extraCSS = [
     	'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap',
-      'http://localhost/board/plugin/dist/style.css'
+      "{$DOMAIN}/plugin/dist/style.css"
     ];
     require_once('template/head.php');
   ?>
