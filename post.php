@@ -52,15 +52,6 @@
 	$tags = $post['tags'] ? explode(',', $post['tags']) : [];
 	$content = $converter->convert($post['content']);
 
-	// 計算有幾篇同分類的文章
-	$sql = "SELECT count(id) as articlesCount FROM `posts` WHERE category_id = ? AND status = ?";
-	$result = executeQuery($conn, $sql, 'is', (int)$post['categoryId'], PUBLISHED_POST_STATUS);
-	if (!$result || $result->num_rows === 0) {
-		header('Location: index.php');
-		exit();
-	}
-	$articlesCount = $result->fetch_assoc()['articlesCount'];
-
 	// 取得同分類的前一篇以及下一篇文章 ID
 	$sql = "SELECT id FROM `posts` WHERE category_id = ? ORDER BY created_at ASC";
 	$result = executeQuery($conn, $sql, 'i', (int)$post['categoryId']);
@@ -178,8 +169,7 @@
       getAppTokenUrl: GET_APP_TOKEN_URL,
       loginParams: loginState,
       appKey: '<?= BOARD_APP_KEY ?>',
-      userToken: userToken,
-      articlesCount: '<?= $articlesCount ?>',
+      userToken: userToken
     })
   </script>
 </html>
