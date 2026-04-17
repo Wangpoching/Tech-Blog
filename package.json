@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "sass css/pages/front-ended/_main.sass:css/dist/landing.css css/pages/front-ended/_about.sass:css/dist/about.css css/pages/front-ended/_post.sass:css/dist/post.css css/pages/front-ended/_posts.sass:css/dist/posts.css css/pages/admin/_main.sass:css/dist/admin-main.css css/pages/admin/_add.sass:css/dist/admin-add.css css/pages/admin/_categories.sass:css/dist/admin-categories.css css/pages/admin/_login.sass:css/dist/admin-login.css",
+    "watch:css": "sass --watch css/pages/front-ended/_main.sass:css/dist/landing.css css/pages/front-ended/_about.sass:css/dist/about.css css/pages/front-ended/_post.sass:css/dist/post.css css/pages/front-ended/_posts.sass:css/dist/posts.css css/pages/admin/_main.sass:css/dist/admin-main.css css/pages/admin/_add.sass:css/dist/admin-add.css css/pages/admin/_categories.sass:css/dist/admin-categories.css css/pages/admin/_login.sass:css/dist/admin-login.css"
   },
   "author": "",
   "license": "ISC",

@@ -359,6 +359,7 @@ body {
 }
 .categories .category .carousel .post {
   width: 164px;
+  flex-shrink: 0;
 }
 .categories .category .carousel .post__image {
   width: 164px;

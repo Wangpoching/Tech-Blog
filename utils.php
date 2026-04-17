@@ -196,6 +196,11 @@
       if (!$result['success'] || $result['affected_rows'] === 0) throw new Exception('儲存 tag 失敗');        
     }
 
+    function categoryGradient($categoryId) {
+        $hue = ((int)$categoryId * 137) % 360;
+        return "linear-gradient(135deg, hsl({$hue}, 48%, 60%), hsl({$hue}, 55%, 42%))";
+    }
+
     function isTokenExpired($token) {
       // JWT 分三段：header.payload.signature
       $parts = explode('.', $token);

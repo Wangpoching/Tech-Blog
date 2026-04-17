@@ -323,21 +323,24 @@ body {
 .intro__content a:hover {
   color: #8a8880;
 }
-.intro__content .profiles {
+
+.profiles {
   font-weight: 500;
   margin-right: auto;
   margin-top: 24px;
   color: #8a8880;
   font-size: 15px;
 }
-.intro__content .profiles-wrapper {
+.profiles-wrapper {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   max-height: 90px;
 }
-.intro__content .profiles .profile {
+.profiles .profile {
   height: 30px;
 }
-.intro__content .profiles button {
+.profiles button {
   margin-top: 12px;
   background: #eee6d8;
   padding: 6px 12px;
@@ -346,7 +349,7 @@ body {
   color: #8a8880;
   cursor: pointer;
 }
-.intro__content .profiles button:hover {
+.profiles button:hover {
   background: #e8e6e0;
 }
 
@@ -423,9 +426,28 @@ body {
   color: #c0bdb8;
   font-size: 22px;
 }
+.posts__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px 0;
+}
+.posts__empty-icon {
+  font-size: 22px;
+  color: #e8e6e0;
+}
+.posts__empty-text {
+  font-size: 13px;
+  color: #c0bdb8;
+  letter-spacing: 0.04em;
+}
 
 @media (max-width: 768px) {
   .intro__title {
     margin-top: 40px;
   }
 }
+
+/*# sourceMappingURL=landing.css.map */

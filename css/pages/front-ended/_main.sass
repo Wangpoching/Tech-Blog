@@ -27,32 +27,33 @@ body
 		&:hover
 			color: $text-muted
 
-	.profiles
-		font-weight: 500
-		margin-right: auto
-		margin-top: 24px
+.profiles
+	font-weight: 500
+	margin-right: auto
+	margin-top: 24px
+	color: $text-muted
+	font-size: $text-md
+
+	&-wrapper
+		display: flex
+		flex-direction: column
+		overflow: hidden
+		max-height: 90px
+
+	.profile
+		height: 30px
+
+	button
+		margin-top: 12px
+		background: $bg-hover
+		padding: 6px 12px
+		border-radius: 12px
+		font-weight: medium
 		color: $text-muted
-		font-size: $text-md
+		cursor: pointer
 
-		&-wrapper
-			display:　flex
-			overflow: hidden
-			max-height: 90px
-
-		.profile
-			height: 30px
-
-		button
-			margin-top: 12px
-			background: $bg-hover
-			padding: 6px 12px
-			border-radius: 12px
-			font-weight: medium
-			color: $text-muted
-			cursor: pointer
-
-			&:hover
-				background: $border
+		&:hover
+			background: $border
 
 .posts
 	min-height: 200px
@@ -126,6 +127,23 @@ body
 			margin-top: 8px
 			color: $text-hint
 			font-size: $text-lg
+
+	&__empty
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		gap: 12px
+		padding: 40px 0
+
+	&__empty-icon
+		font-size: 22px
+		color: $border
+
+	&__empty-text
+		font-size: $text-base
+		color: $text-hint
+		letter-spacing: 0.04em
 
 @media (max-width: 768px)
 	.intro__title

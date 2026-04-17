@@ -300,9 +300,9 @@ header {
 }
 body {
   display: grid;
-  grid-template-columns: 1fr 260px;
+  grid-template-columns: 260px 1fr;
   grid-template-rows: 60px 1fr;
-  grid-template-areas: "header header" "main   sidebar";
+  grid-template-areas: "header header" "sidebar main";
 }
 body header {
   grid-area: header;
@@ -525,3 +525,5 @@ side {
 .danger-btn:hover {
   background: #fdf0f0;
 }
+
+/*# sourceMappingURL=admin-add.css.map */

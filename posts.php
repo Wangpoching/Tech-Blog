@@ -61,7 +61,9 @@
                 <div class="carousel" data-translate="0">
                   <?php foreach($posts as $post): ?>
                       <a class="post" href="post.php?id=<?= (int)$post['id'] ?>">
-                        <div class="post__image"><img src="<?= UPLOAD_COVERS_URL . escape($post['cover_image']) ?>" /></div>
+                        <div class="post__image">
+                          <img src="<?= $post['cover_image'] ? UPLOAD_COVERS_URL . escape($post['cover_image']) : BASE_URL . 'images/default-cover.webp' ?>" />
+                        </div>
                         <div class="post__title"><?= escape($post['title']) ?></div>
                       </a>
                   <?php endforeach; ?>
@@ -71,13 +73,8 @@
           <?php endforeach; ?>
         </div>
     </div>
-    <footer class="footer">Handcrafted by <span class="accent">Pocyun</span> for <span class="accent" id="years"></span> years · <div class="footer-right">
-        <a href="https://github.com/yourname" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/yourname" target="_blank">LinkedIn</a>
-      </div>
-    </footer>
+    <?php require_once('template/footer.php'); ?>
   </body>
-  <script src="js/footer.js"></script>
   <script>
     const container = document.querySelector('.categories');
 

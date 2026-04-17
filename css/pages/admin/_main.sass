@@ -40,18 +40,26 @@ side
 	@include flex-gap(16px)
 	margin-top: 24px
 
-.selector
-	flex-basis: 150px
-	flex-grow: 0
-	flex-shrink: 0
-	@extend %selector
+	.btn-search
+		font-size: $text-base
+		padding: 8px 15px
+		background: $border
+		color: $text-muted
+		border-radius: 6px
+		cursor: pointer
 
-.post-content-selector
-	flex: 1
-	@extend %selector
+	.selector
+		flex-basis: 150px
+		flex-grow: 0
+		flex-shrink: 0
+		@extend %selector
 
-	&::placeholder
-		color: $text-hint
+	.post-content-selector
+		flex: 1
+		@extend %selector
+
+		&::placeholder
+			color: $text-hint
 
 .post-table
 	margin-top: 20px
@@ -117,14 +125,6 @@ side
 		cursor: pointer
 		background-color: unset
 		color: $danger
-
-	.btn-search
-		font-size: $text-base
-		padding: 8px 15px
-		background: $border
-		color: $text-muted
-		border-radius: 6px
-		cursor: pointer
 
 	.nothing-found
 		top: 60%

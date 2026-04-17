@@ -95,16 +95,16 @@ I get bored easily and love exchanging ideas with people who spark new ones. If 
             <?= min($offset + $perPage, $postsCount) ?> of <?= $postsCount ?> posts
             <a class="btn btn-next <?= $nextDisabled ?>" href="?page=<?= $page + 1 ?>">&#8250;</a>
           </div>
+          <?php else: ?>
+            <div class="posts__empty">
+              <div class="posts__empty-icon">✦</div>
+              <div class="posts__empty-text">尚未有精選文章</div>
+            </div>
           <?php endif; ?>
         </div>
     </div>
-    <footer class="footer">Handcrafted by <span class="accent">Pocyun</span> for <span class="accent" id="years"></span> years · <div class="footer-right">
-        <a href="https://github.com/yourname" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/yourname" target="_blank">LinkedIn</a>
-      </div>
-    </footer>
+    <?php require_once('template/footer.php'); ?>
   </body>
-  <script src="js/footer.js"></script>
   <script>
     const slider = document.querySelector('.profiles-wrapper')
     const original = slider.innerHTML

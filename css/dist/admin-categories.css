@@ -300,9 +300,9 @@ header {
 }
 body {
   display: grid;
-  grid-template-columns: 1fr 180px;
+  grid-template-columns: 180px 1fr;
   grid-template-rows: 60px 1fr;
-  grid-template-areas: "header header" "main   sidebar";
+  grid-template-areas: "header header" "sidebar main";
 }
 body header {
   grid-area: header;
@@ -410,3 +410,5 @@ side {
   color: #c0bdb8;
   background: inherit;
 }
+
+/*# sourceMappingURL=admin-categories.css.map */

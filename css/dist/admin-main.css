@@ -117,7 +117,7 @@ body {
   background-color: #f8f7f4;
 }
 
-.selector, .post-content-selector {
+.filters .selector, .filters .post-content-selector {
   display: inline-block;
   font-size: 12px;
   padding: 6px 10px;
@@ -311,9 +311,9 @@ header {
 }
 body {
   display: grid;
-  grid-template-columns: 1fr 180px;
+  grid-template-columns: 180px 1fr;
   grid-template-rows: 60px 1fr;
-  grid-template-areas: "header header" "main   sidebar";
+  grid-template-areas: "header header" "sidebar main";
 }
 body header {
   grid-area: header;
@@ -366,17 +366,23 @@ side {
   gap: 16px;
   margin-top: 24px;
 }
-
-.selector {
+.filters .btn-search {
+  font-size: 13px;
+  padding: 8px 15px;
+  background: #e8e6e0;
+  color: #8a8880;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.filters .selector {
   flex-basis: 150px;
   flex-grow: 0;
   flex-shrink: 0;
 }
-
-.post-content-selector {
+.filters .post-content-selector {
   flex: 1;
 }
-.post-content-selector::placeholder {
+.filters .post-content-selector::placeholder {
   color: #c0bdb8;
 }
 
@@ -445,14 +451,6 @@ side {
   background-color: unset;
   color: #e05050;
 }
-.post-table .btn-search {
-  font-size: 13px;
-  padding: 8px 15px;
-  background: #e8e6e0;
-  color: #8a8880;
-  border-radius: 6px;
-  cursor: pointer;
-}
 .post-table .nothing-found {
   top: 60%;
   left: 50%;
@@ -461,3 +459,5 @@ side {
   font-size: 24px;
   color: #8a8880;
 }
+
+/*# sourceMappingURL=admin-main.css.map */

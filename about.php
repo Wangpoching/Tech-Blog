@@ -120,13 +120,8 @@
           This website is built with php, and hosted on AWS. I use few nowday front-end tools because I intend to keep it old school fashion.</p>
         </div>
     </div>
-    <footer class="footer">Handcrafted by <span class="accent">Pocyun</span> for <span class="accent" id="years"></span> years · <div class="footer-right">
-        <a href="https://github.com/yourname" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/yourname" target="_blank">LinkedIn</a>
-      </div>
-    </footer>
+    <?php require_once('template/footer.php'); ?>
   </body>
-  <script src="js/footer.js"></script>
   <script>
     const twHeading = document.getElementById('tw-heading')
     const twSub = document.getElementById('tw-sub')

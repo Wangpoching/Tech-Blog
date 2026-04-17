@@ -121,6 +121,11 @@
 	      	<div class="cover_image">
 	      		<img src="<?= UPLOAD_COVERS_URL . $post['cover_image'] ?>" />
 	      	</div>
+	      <?php else: ?>
+	      	<div class="cover_image cover_image--default"
+	      	     style="background: <?= categoryGradient($post['categoryId']) ?>">
+	      		<div class="cover_image__title"><?= escape($post['title']) ?></div>
+	      	</div>
 	      <?php endif; ?>
       <div class="content-wrapper content">
       	<?= $content ?>
@@ -137,13 +142,8 @@
 	      	<?php endif; ?>
 	      </div>
 	    </div>
-    <footer class="footer">Handcrafted by <span class="accent">Pocyun</span> for <span class="accent" id="years"></span> years · <div class="footer-right">
-        <a href="https://github.com/yourname" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/yourname" target="_blank">LinkedIn</a>
-      </div>
-    </footer>
+    <?php require_once('template/footer.php'); ?>
   </body>
-  <script src="js/footer.js"></script>
   <script src="<?= $_ENV['COMMENT_BOARD'] ?>/plugin/dist/comment-board.js"></script>
   <script>
     const POST_ID = <?= json_encode($id) ?>;
