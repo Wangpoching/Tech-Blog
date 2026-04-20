@@ -150,7 +150,7 @@
         </side>
     </form>
     <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
-    <script src="../js/easyMde.js"></script>
+    <script src="../js/easyMDE.js"></script>
     <script src="../js/error.js"></script>
     <script>
       // ③ 新增 Tag Chip
