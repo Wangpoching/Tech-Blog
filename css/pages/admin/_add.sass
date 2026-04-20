@@ -5,8 +5,10 @@
 
 body
 	@extend %admin-body
-	@include grid-basic(60px, 260px)
 	min-height: 100vh
+
+	> form
+		@include grid-basic(60px, 260px)
 
 main
 	background: $bg

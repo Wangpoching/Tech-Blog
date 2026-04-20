@@ -16,9 +16,9 @@
 
 @mixin grid-basic($header-height, $side-width)
 	display: grid
-	grid-template-columns: $side-width 1fr
+	grid-template-columns: 1fr $side-width
 	grid-template-rows: $header-height 1fr
-	grid-template-areas: "header header" "sidebar main"
+	grid-template-areas: "header header" "main sidebar"
 
 	header
 		grid-area: header
