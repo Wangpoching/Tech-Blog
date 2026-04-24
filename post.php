@@ -54,7 +54,7 @@
 
 	// 取得同分類的前一篇以及下一篇文章 ID
 	$sql = "SELECT id FROM `posts` WHERE category_id = ? AND status = ? ORDER BY created_at ASC";
-	$result = executeQuery($conn, $sql, 'i', (int)$post['categoryId'], PUBLISHED_POST_STATUS);
+	$result = executeQuery($conn, $sql, 'is', (int)$post['categoryId'], PUBLISHED_POST_STATUS);
 	$idsResult =  $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
 	$ids = [];
 	foreach($idsResult as $item) {
